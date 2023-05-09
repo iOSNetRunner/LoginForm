@@ -7,22 +7,29 @@
 
 import UIKit
 
+
+
 final class LoginViewController: UIViewController {
     
-    let gradientLayer = CAGradientLayer()
-
     @IBOutlet var backgroundView: UIView!
+    
+    let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundSettings()
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
         gradientLayer.frame = backgroundView.bounds
     }
     
-    private func backgroundSettings() {
+    
+}
+
+extension LoginViewController {
+    
+    func backgroundSettings() {
         gradientLayer.colors = [
             UIColor.systemYellow.cgColor,
             UIColor.black.cgColor
