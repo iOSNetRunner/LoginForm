@@ -64,7 +64,7 @@
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="lock.fill" catalog="system" title="Log In">
-                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -187,9 +187,6 @@
     </scenes>
     <resources>
         <image name="lock.fill" catalog="system" width="125" height="128"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
