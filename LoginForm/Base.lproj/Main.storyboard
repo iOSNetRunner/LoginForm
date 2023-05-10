@@ -63,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="111.99999999999999" width="370" height="34.333333333333329"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Log In">
+                                        <buttonConfiguration key="configuration" style="filled" image="lock.fill" catalog="system" title="Log In">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
@@ -176,6 +176,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="m6V-XN-MsQ" id="omj-Pe-VQu"/>
                         <outlet property="usernameLabel" destination="498-v2-B56" id="Pjt-te-e6z"/>
+                        <outlet property="wavingHandLabel" destination="CVk-NH-zoG" id="U4z-IV-edU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFK-C2-tBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,6 +186,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lock.fill" catalog="system" width="125" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
