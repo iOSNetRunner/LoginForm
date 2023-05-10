@@ -1,5 +1,5 @@
 //
-//  UserViewController.swift
+//  WelcomeViewController.swift
 //  LoginForm
 //
 //  Created by Dmitrii Galatskii on 09.05.2023.
@@ -8,19 +8,29 @@
 import UIKit
 
 final class WelcomeViewController: UIViewController {
-
-    let gradientLayer = CAGradientLayer()
+    
     @IBOutlet var backgroundView: UIView!
+    
+    @IBOutlet var usernameLabel: UILabel!
+    
+    var usernameWelcome: String!
+    
+    internal let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundSettings()
+        usernameLabel.text = usernameWelcome
     }
     
     override func viewWillLayoutSubviews() {
         gradientLayer.frame = backgroundView.bounds
     }
+    
 
+    @IBAction func logoutButtonTapped() {
+        dismiss(animated: true)
+    }
     
 }
 
