@@ -15,18 +15,20 @@ final class LoginViewController: UIViewController {
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let user = "Jack"
+    private let user = "Johnny"
     private let password = "qwe"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundToGradient()
     }
-
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard usernameTF.text == user, passwordTF.text == password else {
             showAlert(withTitle: "ACCESS DENIED",
-                      andMessage: "Wrong password or username.\n Please, try again! \n😛")
+                      andMessage: "Wrong password or username.\n Please, try again! \n😛",
+                      textField: passwordTF
+            )
             return false
         }
         return true
@@ -53,21 +55,13 @@ final class LoginViewController: UIViewController {
         usernameTF.text = ""
         passwordTF.text = ""
     }
-}
-
-// MARK: - UIAlertController
-
-extension LoginViewController {
-    private func showAlert(withTitle title: String, andMessage message: String) {
+    
+    private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        if title == "ACCESS DENIED" {
-            let closeAction = UIAlertAction(title: "Close", style: .destructive) { _ in
-                self.passwordTF.text = "" }
-            alert.addAction(closeAction)
-        } else {
-            let closeAction = UIAlertAction(title: "Close", style: .destructive)
-            alert.addAction(closeAction)
+        let closeAction = UIAlertAction(title: "Close", style: .destructive) { _ in
+            textField?.text = ""
         }
+        alert.addAction(closeAction)
         present(alert, animated: true)
     }
 }
