@@ -12,23 +12,19 @@ import UIKit
 final class LoginViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet var backgroundView: UIView!
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let gradientLayer = CAGradientLayer()
+    private let user = "Jack"
+    private let password = "qwe"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundGradient()
+        view.setBackgroundToGradient()
     }
-    
-    override func viewDidLayoutSubviews() {
-        gradientLayer.frame = backgroundView.bounds
-    }
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTF.text == "Jack", passwordTF.text == "qwe" else {
+        guard usernameTF.text == user, passwordTF.text == password else {
             showAlert(withTitle: "ACCESS DENIED",
                       andMessage: "Wrong password or username.\n Please, try again! \n😛")
             return false
@@ -38,22 +34,19 @@ final class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.usernameWelcome = usernameTF.text
+        welcomeVC.user = user
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     // MARK: - IBActions
-    @IBAction func forgotUsernameTapped() {
-        showAlert(withTitle: "Username reminder",
-                  andMessage: "Your username is Jack!\n 🧐")
-    }
-    
-    @IBAction func forgotPassTapped() {
-        showAlert(withTitle: "Password reminder",
-                  andMessage: "Your password is qwe!\n 🤔")
+    @IBAction func forgotInputData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(withTitle: "Username reminder", andMessage: "Your username is \(user)!\n 🧐")
+        : showAlert(withTitle: "Password reminder", andMessage: "Your password is \(password)!\n 🤔")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -62,15 +55,9 @@ final class LoginViewController: UIViewController {
     }
 }
 
-// MARK: - BackgroundSettings & UIAlertController
+// MARK: - UIAlertController
+
 extension LoginViewController {
-    
-    private func setBackgroundGradient() {
-        gradientLayer.colors = [UIColor.systemYellow.cgColor,
-                                UIColor.black.cgColor]
-        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if title == "ACCESS DENIED" {
