@@ -16,10 +16,8 @@ final class BioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setBackgroundToGradient()
+        view.setBackgroundToGradientWith()
         bioTextView.text = bio
         bioTextView.setShadowForTextView()
     }
-    
-   
 }

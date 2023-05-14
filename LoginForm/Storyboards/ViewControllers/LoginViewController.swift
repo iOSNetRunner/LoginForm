@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setBackgroundToGradient()
+        view.setBackgroundToGradientWith()
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
