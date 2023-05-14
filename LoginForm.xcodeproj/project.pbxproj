@@ -15,7 +15,7 @@
 		60436A492A0A5A2F008206FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60436A472A0A5A2F008206FE /* LaunchScreen.storyboard */; };
 		60559A812A0A9F2A0086C18E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60559A802A0A9F2A0086C18E /* WelcomeViewController.swift */; };
 		609979F72A10F42700CA7906 /* Extension + UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609979F62A10F42700CA7906 /* Extension + UITextView.swift */; };
-		60A354CC2A0FA676000EDF98 /* Extension +UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A354CB2A0FA676000EDF98 /* Extension +UIView.swift */; };
+		60A354CC2A0FA676000EDF98 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A354CB2A0FA676000EDF98 /* Extension + UIView.swift */; };
 		60A354D52A0FDF97000EDF98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A354D42A0FDF97000EDF98 /* User.swift */; };
 		60A354D72A0FF762000EDF98 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A354D62A0FF762000EDF98 /* PersonViewController.swift */; };
 		60A354D92A100EBA000EDF98 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A354D82A100EBA000EDF98 /* BioViewController.swift */; };
@@ -32,7 +32,7 @@
 		60436A4A2A0A5A2F008206FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60559A802A0A9F2A0086C18E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		609979F62A10F42700CA7906 /* Extension + UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITextView.swift"; sourceTree = "<group>"; };
-		60A354CB2A0FA676000EDF98 /* Extension +UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension +UIView.swift"; sourceTree = "<group>"; };
+		60A354CB2A0FA676000EDF98 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		60A354D42A0FDF97000EDF98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60A354D62A0FF762000EDF98 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		60A354D82A100EBA000EDF98 /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		60A354D12A0FAF37000EDF98 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				60A354CB2A0FA676000EDF98 /* Extension +UIView.swift */,
+				60A354CB2A0FA676000EDF98 /* Extension + UIView.swift */,
 				609979F62A10F42700CA7906 /* Extension + UITextView.swift */,
 			);
 			path = Extensions;
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60436A412A0A5A2D008206FE /* LoginViewController.swift in Sources */,
-				60A354CC2A0FA676000EDF98 /* Extension +UIView.swift in Sources */,
+				60A354CC2A0FA676000EDF98 /* Extension + UIView.swift in Sources */,
 				60A354D52A0FDF97000EDF98 /* User.swift in Sources */,
 				60A354D92A100EBA000EDF98 /* BioViewController.swift in Sources */,
 				60559A812A0A9F2A0086C18E /* WelcomeViewController.swift in Sources */,

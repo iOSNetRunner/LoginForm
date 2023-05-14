@@ -7,12 +7,10 @@
 
 import UIKit
 
-class PersonViewController: UIViewController {
+final class PersonViewController: UIViewController {
 
-    
+    // MARK: - IBOutlets
     @IBOutlet var userImage: UIImageView!
-    
-    var user: User!
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var lastnameLabel: UILabel!
@@ -21,21 +19,29 @@ class PersonViewController: UIViewController {
     @IBOutlet var countryLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     
+    // MARK: - Public properties
+    var user: User!
+    
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundToGradientWith()
-        userImage.layer.cornerRadius = userImage.frame.width / 2
+        userImage.layer.cornerRadius = 30
         nameLabel.text = user.person.name
         lastnameLabel.text = user.person.lastname
         ageLabel.text = String(user.person.age)
         hobbiesLabel.text = user.person.hobbies
         countryLabel.text = user.person.country
         cityLabel.text = user.person.city
-        
-        
-        
     }
     
+    override func viewDidLayoutSubviews() {
+        UIView.animate(withDuration: 1) {
+            self.userImage.alpha = 1
+        }
+    }
+    
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let bioVC = segue.destination as? BioViewController else { return }
         bioVC.title = "\(user.person.name) \(user.person.lastname) bio"

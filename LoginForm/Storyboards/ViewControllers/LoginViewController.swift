@@ -7,32 +7,36 @@
 
 import UIKit
 
-
-
 final class LoginViewController: UIViewController {
-    
     
     // MARK: - IBOutlets
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
+    // MARK: - Private properties
     private let user = User(
         username: "Johnny",
         password: "qwe",
         person: User.getPerson()
     )
    
+    // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundToGradientWith()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard usernameTF.text == user.username, passwordTF.text == user.password else {
             showAlert(withTitle: "ACCESS DENIED",
                       andMessage: "Wrong password or username.\n Please, try again! \n😛",
-                      textField: passwordTF
-            )
+                      textField: passwordTF)
             return false
         }
         return true
@@ -53,11 +57,6 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
     // MARK: - IBActions
     @IBAction func forgotInputData(_ sender: UIButton) {
         sender.tag == 0
@@ -70,6 +69,7 @@ final class LoginViewController: UIViewController {
         passwordTF.text = ""
     }
     
+    // MARK: - Private methods
     private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let closeAction = UIAlertAction(title: "Close", style: .destructive) { _ in
