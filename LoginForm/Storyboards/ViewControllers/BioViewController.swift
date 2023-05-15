@@ -13,13 +13,14 @@ final class BioViewController: UIViewController {
     @IBOutlet var bioTextView: UITextView!
     
     // MARK: - Public properties
-    var bio: String!
+    var user: User!
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundToGradientWith()
-        bioTextView.text = bio
+        title = "\(user.person.name) \(user.person.lastname) bio"
+        bioTextView.text = user.person.bio
         bioTextView.setShadowForTextView()
     }
     

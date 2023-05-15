@@ -171,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="johnnyImage" translatesAutoresizingMaskIntoConstraints="NO" id="nxo-VE-ex7">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxo-VE-ex7">
                                 <rect key="frame" x="60" y="178" width="310" height="310"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nxo-VE-ex7" secondAttribute="height" multiplier="1:1" id="mCA-te-uYQ"/>
@@ -442,7 +442,6 @@
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="info.bubble.fill" catalog="system" width="128" height="110"/>
-        <image name="johnnyImage" width="541" height="436"/>
         <image name="lock.fill" catalog="system" width="125" height="128"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

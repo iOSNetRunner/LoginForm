@@ -14,11 +14,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     
     // MARK: - Private properties
-    private let user = User(
-        username: "Johnny",
-        password: "qwe",
-        person: User.getPerson()
-    )
+    private let userJohnny = User.getUser()
    
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -33,7 +29,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Navigation
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard usernameTF.text == user.username, passwordTF.text == user.password else {
+        guard usernameTF.text == userJohnny.username, passwordTF.text == userJohnny.password else {
             showAlert(withTitle: "ACCESS DENIED",
                       andMessage: "Wrong password or username.\n Please, try again! \n😛",
                       textField: passwordTF)
@@ -48,11 +44,11 @@ final class LoginViewController: UIViewController {
         
         for viewController in viewControllers {
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.user = user.username
+                welcomeVC.user = userJohnny
             } else if let navigationVC = viewController as? UINavigationController {
                 guard let personVC = navigationVC.topViewController as? PersonViewController else { return }
-                personVC.title = "\(user.person.name) \(user.person.lastname)"
-                personVC.user = user
+                //personVC.title = "\(userJohnny.person.name) \(userJohnny.person.lastname)"
+                personVC.user = userJohnny
             }
         }
     }
@@ -60,8 +56,8 @@ final class LoginViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func forgotInputData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTitle: "Username reminder", andMessage: "Your username is \(user.username)!\n 🧐")
-        : showAlert(withTitle: "Password reminder", andMessage: "Your password is \(user.password)!\n 🤔")
+        ? showAlert(withTitle: "Username reminder", andMessage: "Your username is \(userJohnny.username)!\n 🧐")
+        : showAlert(withTitle: "Password reminder", andMessage: "Your password is \(userJohnny.password)!\n 🤔")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {

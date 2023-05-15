@@ -14,13 +14,13 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet var wavingHandLabel: UILabel!
     
     // MARK: - Public properties
-    var user = ""
+    var user: User!
     
     // MARK: - Life cycles methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundToGradientWith()
-        usernameLabel.text = "Welcome, \(user)!"
+        usernameLabel.text = "Welcome, \(user.username)!"
     }
     
     override func viewDidLayoutSubviews() {

@@ -11,7 +11,6 @@ final class PersonViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet var userImage: UIImageView!
-    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var lastnameLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
@@ -25,6 +24,8 @@ final class PersonViewController: UIViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "\(user.person.name) \(user.person.lastname)"
+        userImage.image = UIImage(named: user.person.profileImage)
         view.setBackgroundToGradientWith()
         userImage.layer.cornerRadius = 30
         nameLabel.text = user.person.name
@@ -44,7 +45,7 @@ final class PersonViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let bioVC = segue.destination as? BioViewController else { return }
-        bioVC.title = "\(user.person.name) \(user.person.lastname) bio"
-        bioVC.bio = user.person.bio
+        //bioVC.title = "\(user.person.name) \(user.person.lastname) bio"
+        bioVC.user = user
     }
 }
